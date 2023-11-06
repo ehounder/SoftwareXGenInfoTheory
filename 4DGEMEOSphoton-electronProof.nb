@@ -1,0 +1,445 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17428,        437]
+NotebookOptionsPosition[     16925,        419]
+NotebookOutlinePosition[     17322,        435]
+CellTagsIndexPosition[     17279,        432]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Proof", "=", 
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"h", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<PlanckConstant\>\""}], "]"}], ",", 
+          RowBox[{"\"\<Joules\>\"", " ", "\"\<Seconds\>\""}]}], "]"}]}], ",", 
+       
+       RowBox[{"hbar", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"Quantity", "[", 
+            RowBox[{"1", ",", "\"\<PlanckConstant\>\""}], "]"}], 
+           RowBox[{"2", " ", "\[Pi]"}]], ",", 
+          RowBox[{"\"\<Joules\>\"", " ", "\"\<Seconds\>\""}]}], "]"}]}], ",", 
+       
+       RowBox[{"c", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<SpeedOfLight\>\""}], "]"}], ",", 
+          FractionBox["\"\<Meters\>\"", "\"\<Seconds\>\""]}], "]"}]}], ",", 
+       RowBox[{"eEnergy", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", 
+            RowBox[{"\"\<ElectronMass\>\"", " ", 
+             SuperscriptBox["\"\<SpeedOfLight\>\"", "2"]}]}], "]"}], ",", 
+          "\"\<Joules\>\""}], "]"}]}], ",", 
+       RowBox[{"me", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<ElectronMass\>\""}], "]"}], ",", 
+          "\"\<Kilograms\>\""}], "]"}]}], ",", 
+       RowBox[{"bohr", "=", 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<BohrRadius\>\""}], "]"}], ",", 
+          "\"\<Meters\>\""}], "]"}]}]}], "}"}], ",", 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+        RowBox[{"UniformDistribution", "[", 
+         RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1.*^-12", "10000."},
+            {"1", "10000"}
+           },
+           GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.7]}, 
+               Offset[0.27999999999999997`]}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}}], "\[NoBreak]", ")"}], "]"}]}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SubsuperscriptBox["\[Integral]", "0", "\[Lambda]"], 
+           RowBox[{
+            SubsuperscriptBox["\[Integral]", 
+             RowBox[{"-", 
+              FractionBox["\[Pi]", "4"]}], 
+             FractionBox["\[Pi]", "4"]], 
+            RowBox[{
+             SubsuperscriptBox["\[Integral]", "0", 
+              RowBox[{
+               FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+               SqrtBox[
+                RowBox[{"cos", "(", 
+                 RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], 
+             RowBox[{
+              FractionBox[
+               RowBox[{"2", " ", "r", " ", 
+                RowBox[{"(", 
+                 RowBox[{"2", " ", "c", " ", "h"}], ")"}], " ", 
+                TemplateBox[{
+                  RowBox[{"sin", "(", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "\[Pi]"}], ")"}], " ", "y"}], 
+                    "\[Lambda]"], ")"}]},
+                 "Abs"], " ", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  SuperscriptBox[
+                   RowBox[{"(", 
+                    FractionBox["r", 
+                    RowBox[{
+                    FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+                    SqrtBox[
+                    RowBox[{"cos", "(", 
+                    RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], ")"}], "2"]}], 
+                 ")"}]}], 
+               FractionBox[
+                RowBox[{"\[Lambda]", " ", 
+                 SuperscriptBox["\[Lambda]", "3"]}], 
+                RowBox[{"8", " ", "\[Pi]"}]]], 
+              RowBox[{"\[DifferentialD]", "r"}], 
+              RowBox[{"\[DifferentialD]", "\[Theta]"}], 
+              RowBox[{"\[DifferentialD]", "y"}]}]}]}]}], "\[LongEqual]", 
+          FractionBox[
+           RowBox[{"c", " ", "h"}], "\[Lambda]"]}], "\[DoubleRightArrow]", 
+         RowBox[{
+          RowBox[{
+           SubsuperscriptBox["\[Integral]", "0", "\[Lambda]"], 
+           RowBox[{
+            SubsuperscriptBox["\[Integral]", 
+             RowBox[{"-", 
+              FractionBox["\[Pi]", "4"]}], 
+             FractionBox["\[Pi]", "4"]], 
+            RowBox[{
+             SubsuperscriptBox["\[Integral]", "0", 
+              RowBox[{
+               FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+               SqrtBox[
+                RowBox[{"cos", "(", 
+                 RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], 
+             RowBox[{
+              FractionBox[
+               RowBox[{"2", " ", 
+                RowBox[{"(", 
+                 RowBox[{"2", " ", "\[Pi]", " ", "c"}], ")"}], " ", "r", " ", 
+                
+                RowBox[{"(", 
+                 RowBox[{"2", " ", "c", " ", "h"}], ")"}], " ", 
+                TemplateBox[{
+                  RowBox[{"sin", "(", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "\[Pi]"}], ")"}], " ", "y"}], 
+                    "\[Lambda]"], ")"}]},
+                 "Abs"], " ", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  SuperscriptBox[
+                   RowBox[{"(", 
+                    FractionBox["r", 
+                    RowBox[{
+                    FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+                    SqrtBox[
+                    RowBox[{"cos", "(", 
+                    RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], ")"}], "2"]}], 
+                 ")"}]}], 
+               FractionBox[
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   SuperscriptBox["c", "2"], " ", 
+                   RowBox[{"(", 
+                    RowBox[{"\[Lambda]", " ", 
+                    SuperscriptBox["\[Lambda]", "3"]}], ")"}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"\[Lambda]", " ", 
+                   RowBox[{
+                    SubsuperscriptBox["\[Integral]", "0", "\[Lambda]"], 
+                    RowBox[{
+                    SubsuperscriptBox["\[Integral]", 
+                    RowBox[{"-", 
+                    FractionBox["\[Pi]", "4"]}], 
+                    FractionBox["\[Pi]", "4"]], 
+                    RowBox[{
+                    SubsuperscriptBox["\[Integral]", "0", 
+                    RowBox[{
+                    FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+                    SqrtBox[
+                    RowBox[{"cos", "(", 
+                    RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "\[Pi]", " ", "c"}], ")"}], " ", "r", 
+                    " ", 
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "c", " ", "h"}], ")"}], " ", 
+                    TemplateBox[{
+                    RowBox[{"sin", "(", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "\[Pi]"}], ")"}], " ", "y"}], 
+                    "\[Lambda]"], ")"}]},
+                    "Abs"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "-", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    FractionBox["r", 
+                    RowBox[{
+                    FractionBox["1", "4"], " ", "\[Lambda]", " ", 
+                    SqrtBox[
+                    RowBox[{"cos", "(", 
+                    RowBox[{"2", " ", "\[Theta]"}], ")"}]]}]], ")"}], "2"]}], 
+                    ")"}]}], 
+                    FractionBox[
+                    RowBox[{"\[Lambda]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["c", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"\[Lambda]", " ", 
+                    SuperscriptBox["\[Lambda]", "3"]}], ")"}]}], ")"}]}], 
+                    RowBox[{"8", " ", "\[Pi]"}]]], 
+                    RowBox[{"\[DifferentialD]", "r"}], 
+                    RowBox[{"\[DifferentialD]", "\[Theta]"}], 
+                    RowBox[{"\[DifferentialD]", "y"}]}]}]}]}]}], ")"}]}], 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"8", " ", "\[Pi]"}], ")"}], " ", "hbar"}]]], 
+              RowBox[{"\[DifferentialD]", "r"}], 
+              RowBox[{"\[DifferentialD]", "\[Theta]"}], 
+              RowBox[{"\[DifferentialD]", "y"}]}]}]}]}], "\[LongEqual]", 
+          "hbar"}]}], "\[And]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SubsuperscriptBox["\[Integral]", "0", 
+            RowBox[{"2", " ", "\[Pi]"}]], 
+           RowBox[{
+            SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+            RowBox[{
+             SubsuperscriptBox["\[Integral]", "0", 
+              RowBox[{
+               SqrtBox["2"], " ", "bohr", " ", 
+               SuperscriptBox["n", "2"]}]], 
+             RowBox[{
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"4", " ", "eEnergy"}], ")"}], " ", 
+                SuperscriptBox["r", "2"], " ", 
+                RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  FractionBox["r", 
+                   RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}]]}], ")"}]}], 
+               RowBox[{
+                FractionBox["1", "3"], " ", 
+                SuperscriptBox["c", "2"], " ", 
+                RowBox[{"(", 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox[
+                   RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}], ")"}], "3"]}], ")"}]}]], 
+              RowBox[{"\[DifferentialD]", "r"}], 
+              RowBox[{"\[DifferentialD]", "\[Phi]"}], 
+              RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}], 
+          "\[LongEqual]", "me"}], "\[DoubleRightArrow]", 
+         RowBox[{
+          RowBox[{
+           SubsuperscriptBox["\[Integral]", "0", 
+            RowBox[{"2", " ", "\[Pi]"}]], 
+           RowBox[{
+            SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+            RowBox[{
+             SubsuperscriptBox["\[Integral]", "0", 
+              RowBox[{
+               SqrtBox["2"], " ", "bohr", " ", 
+               SuperscriptBox["n", "2"]}]], 
+             RowBox[{
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"4", " ", "eEnergy"}], ")"}], " ", 
+                SuperscriptBox["r", "2"], " ", 
+                RowBox[{"(", 
+                 RowBox[{"c", " ", "hbar"}], ")"}], " ", 
+                RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  FractionBox["r", 
+                   RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}]]}], ")"}]}], 
+               RowBox[{
+                FractionBox["1", "3"], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  SuperscriptBox["c", "2"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"4", " ", "\[Pi]", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}], ")"}], "3"]}], ")"}]}], ")"}],
+                 " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"2", " ", "\[Pi]", " ", 
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}], ")"}], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"2", " ", 
+                    RowBox[{
+                    SubsuperscriptBox["\[Integral]", "0", 
+                    RowBox[{"2", " ", "\[Pi]"}]], 
+                    RowBox[{
+                    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+                    RowBox[{
+                    SubsuperscriptBox["\[Integral]", "0", 
+                    RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}]], 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"c", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"4", " ", "eEnergy"}], ")"}], " ", 
+                    SuperscriptBox["r", "2"], " ", 
+                    RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "-", 
+                    FractionBox["r", 
+                    RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}]]}], ")"}]}], 
+                    RowBox[{
+                    FractionBox["1", "3"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"2", " ", "\[Pi]", " ", 
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["c", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"4", " ", "\[Pi]", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SqrtBox["2"], " ", "bohr", " ", 
+                    SuperscriptBox["n", "2"]}], ")"}], "3"]}], ")"}]}], 
+                    ")"}]}]], 
+                    RowBox[{"\[DifferentialD]", "r"}], 
+                    RowBox[{"\[DifferentialD]", "\[Phi]"}], 
+                    RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}]}], 
+                   ")"}]}], ")"}]}]], 
+              RowBox[{"\[DifferentialD]", "r"}], 
+              RowBox[{"\[DifferentialD]", "\[Phi]"}], 
+              RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}], 
+          "\[LongEqual]", 
+          FractionBox["hbar", "2"]}]}]}], ")"}]}]}], "]"}]}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.753201709480736*^9, 3.753201715205508*^9}, {
+   3.753201771560946*^9, 3.7532017813224497`*^9}, 3.753201871866426*^9, 
+   3.897291964837418*^9, {3.9060437233155403`*^9, 3.906043726679521*^9}, 
+   3.906051014982123*^9, 3.908296004075329*^9},
+ CellID->1898578403,ExpressionUUID->"cd638e09-8a29-4df5-b2ee-4bb23a98a10a"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`h$$ = Rational[
+  132521403, 
+   200000000000000000000000000000000000000000], $CellContext`hbar$$ = 
+  Rational[132521403, 400000000000000000000000000000000000000000]/
+  Pi, $CellContext`c$$ = 299792458, $CellContext`eEnergy$$ = 
+  8.187105776823886677841201`9.211300968617545*^-14, $CellContext`me$$ = 
+  9.10938370150000079003439766`9.211300968617545*^-31, $CellContext`bohr$$ = 
+  5.291772109029999813118170167`9.519481150304392*^-11}, 
+  RowBox[{
+   RowBox[{"UniformDistribution", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1.`*^-12", ",", "10000.`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "10000"}], "}"}]}], "}"}], "]"}], "\[Implies]", 
+   RowBox[{
+    RowBox[{"True", "\[DoubleRightArrow]", "True"}], "&&", 
+    RowBox[{"True", "\[DoubleRightArrow]", "True"}]}]}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.8972918905013313`*^9, 3.9060436003668537`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"24fd4896-40dd-425f-9ff1-79e9d6b29002"]
+}, Open  ]]
+},
+WindowSize->{1482, 758},
+WindowMargins->{{13, Automatic}, {Automatic, 4}},
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"402550db-65bd-4233-83bf-7bd125bfad5a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 15272, 370, 635, "Input",ExpressionUUID->"cd638e09-8a29-4df5-b2ee-4bb23a98a10a",
+ CellID->1898578403],
+Cell[15855, 394, 1054, 22, 37, "Output",ExpressionUUID->"24fd4896-40dd-425f-9ff1-79e9d6b29002"]
+}, Open  ]]
+}
+]
+*)
+

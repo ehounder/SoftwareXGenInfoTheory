@@ -5,6 +5,8 @@
 
 (* CreatedBy='Mathematica 13.2' *)
 
+(* Author: David Harness *)
+
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
